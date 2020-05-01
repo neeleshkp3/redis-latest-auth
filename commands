@@ -1,0 +1,1 @@
+docker service create --replicas 1 -p 7942:6379 --network ct --mount type=volume,source=s3-center-redis,target=/data --constraint 'node.labels.role.w == 5' --name s3-center-redis s3-center-redis
